@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfólio de Willian Rambo, desenvolvedor web com foco em soluções modernas e funcionais.">
+  <title>Meu Portfólio</title>
+  <link rel="stylesheet" href="estilo.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <nav>
+        <div  id="hero">
+          <h1>Willian Rambo</h1>
+        </div>
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio">
+      <h2 id="typing-text" style="color: aliceblue;"></h2>
+      <p>Sou programador web com foco em soluções modernas e funcionais</p>
+    </section>
+
+    <section id="sobre" class="reveal">
+      <h2>Sobre mim</h2>
+      <p>Sou apaixonado por tecnologia e estou em constante aprendizado. Tenho conhecimento em HTML, 
+        CSS, JavaScript, PHP, MySQL, Git, GitHub, além de frameworks como React. Busco oportunidades 
+        para aplicar minhas habilidades em projetos reais.</p>
+    </section>
+
+    <section id="projetos" class="reveal">
+      <h2>Meus Projetos</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Projeto 1</h3>
+          <p>Descrição breve do projeto. Tecnologias usadas, propósito etc.</p>
+        </div>
+        <div class="card">
+          <h3>Projeto 2</h3>
+          <p>Outro exemplo de trabalho. Você pode linkar para o GitHub ou deploy.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="habilidades" class="reveal">
+      <h2>Skills (Habilidades)</h2>
+      <ul class="skills">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>PHP</li>
+        <li>MySQL</li>
+        <li>React</li>
+        <li>Git</li>
+        <li>GitHub</li>
+      </ul>
+    </section>
+
+    <section id="contato" class="reveal">
+      <h2>Contato</h2>
+      <p>Entre em contato pelo e-mail: <a href="mailto:willian.rambo@gmail.com">willian.rambo@gmail.com</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Willian Rambo. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- 🔽 SCRIPTS no final do body -->
+  <!-- <script>
+    function revealOnScroll() {
+      const reveals = document.querySelectorAll('.reveal');
+
+      reveals.forEach((el) => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        const revealPoint = 100;
+
+        if (elementTop < windowHeight - revealPoint) {
+          el.classList.add('active');
+        } else {
+          el.classList.remove('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
+
+  <script>
+    const text = "Bem vindo(a) ao meu Portfólio";
+    let i = 0;
+    const speed = 80;
+    const typingEl = document.getElementById("typing-text");
+
+    function typeWriter() {
+      if (i < text.length) {
+        typingEl.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+
+    window.addEventListener('load', typeWriter);
+  </script>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      });
+    });
+  </script> -->
+  <script src="script.js"></script>
+</body>
+</html>
