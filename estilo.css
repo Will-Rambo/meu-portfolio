@@ -112,9 +112,8 @@ section {
 }
 
 .reveal {
-  opacity: 0;
+  opacity: 100%;
   transform: translateY(40px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .reveal.active {
@@ -141,6 +140,42 @@ section {
   color: transparent;
   -webkit-text-fill-color: transparent;
   transition: background-position 0.9s ease;
+}
+
+#meu-gif {
+  width: 400px; /* Aumente o valor conforme necessário */
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Modal que cobre a tela */
+#gif-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#gif-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(2, 2, 2, 0.4);
+  animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.7);  
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 #hero h1:hover {
