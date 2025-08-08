@@ -7,6 +7,23 @@
   <title>Meu Portfólio</title>
   <link rel="stylesheet" href="estilo.css" />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <link  rel= "ícone-de-toque-da-maçã"  tamanhos= "57x57"  href= "icone/apple-icon-57x57.png" > 
+<link  rel= "ícone-de-toque-da-maçã"  tamanhos= "60x60"  href= "icone/apple-icon-60x60.png" > 
+<link  rel= "ícone-de-toque-da-maçã"  tamanhos= "72x72"  href= "icone-de-toque-da-maçã-72x72.png" > 
+<link  rel= "ícone-de-toque-da-maçã"  tamanhos= "76x76"  href= "icone/android-icon-72x72.png" > 
+<link  rel= "ícone-de-toque-da-maçã"  tamanhos= "114x114"  href= "icone/apple-icon-114x114.png" > 
+<link  rel= "ícone-de-toque-da-maçã"  tamanhos= "120x120"  href= "icone/apple-icon-120x120.png" > 
+<link  rel= "apple-touch-icon"  tamanhos= "144x144"  href= "icone/apple-icon-144x144.png" > 
+<link  rel= "apple-touch-icon"  tamanhos= "152x152"  href= "icone/apple-icon-152x152.png" > 
+<link  rel= "apple-touch-icon"  tamanhos= "180x180"  href= "icone/apple-icon-180x180.png" > 
+<link  rel= "icon"  tipo= "imagem/png"  tamanhos= "192x192"   href= "icone/android-icon-192x192.png" > 
+<link  rel= "icon"  tipo= "imagem/png"  tamanhos= "32x32"  href= "icone/favicon-32x32.png" > 
+<link  rel= "ícone"  tipo= "imagem/png"  tamanhos= "96x96"  href= "icone/android-icon-96x96.png" > 
+<link  rel= "ícone"  tipo= "imagem/png"  tamanhos= "16x16"  href= "icone/favicon-16x16.png" > 
+<link  rel= "manifesto"  href= "icone/manifest.json" > 
+<meta  nome= "msapplication-TileColor"  conteúdo= "#ffffff" > 
+<meta  nome= "msapplication-TileImage"  conteúdo= "ims-icon-144x144.png" > 
+<meta  nome= "theme-color"  conteúdo= "#ffffff" >
 </head>
 
 <body>
@@ -39,11 +56,13 @@
     </section>
 
     <section id="projetos" class="reveal">
-      <h2>Meus Projetos</h2>
+      <h2>Meus projetos</h2>
       <div class="cards">
         <div class="card">
-          <h3>Projeto 1</h3>
-          <p>Descrição breve do projeto. Tecnologias usadas, propósito etc.</p>
+          <h3>Página de Login</h3>
+          <img id="meu-gif" src="img/gravacao-login.gif" alt="meu projeto gif">
+          <p>Esse projeto foi um desafio do curso Programador Web que realizei no Senac, se trata de uma página onde é possível cadastrar e posteriormente se logar,
+             no final a página retorna boas vindas, esse projeto necessitou de um banco de dados para guardar usuário e senha.</p>
         </div>
         <div class="card">
           <h3>Projeto 2</h3>
@@ -71,62 +90,17 @@
       <p>Entre em contato pelo e-mail: <a href="mailto:willian.rambo@gmail.com">willian.rambo@gmail.com</a></p>
     </section>
   </main>
-
+    <div id="gif-modal" class="modal-overlay">
+      <img src="img/gravacao-login.gif" alt="gif ampliado">
+    </div>
   <footer>
     <p>&copy; 2025 Willian Rambo. Todos os direitos reservados.</p>
   </footer>
 
-  <!-- 🔽 SCRIPTS no final do body -->
-  <!-- <script>
-    function revealOnScroll() {
-      const reveals = document.querySelectorAll('.reveal');
-
-      reveals.forEach((el) => {
-        const windowHeight = window.innerHeight;
-        const elementTop = el.getBoundingClientRect().top;
-        const revealPoint = 100;
-
-        if (elementTop < windowHeight - revealPoint) {
-          el.classList.add('active');
-        } else {
-          el.classList.remove('active');
-        }
-      });
-    }
-
-    window.addEventListener('scroll', revealOnScroll);
-    window.addEventListener('load', revealOnScroll);
-  </script>
-
-  <script>
-    const text = "Bem vindo(a) ao meu Portfólio";
-    let i = 0;
-    const speed = 80;
-    const typingEl = document.getElementById("typing-text");
-
-    function typeWriter() {
-      if (i < text.length) {
-        typingEl.textContent += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, speed);
-      }
-    }
-
-    window.addEventListener('load', typeWriter);
-  </script>
-
-  <script>
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      });
-    });
-  </script> -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="script.js"></script>
+ 
 </body>
 </html>
+
