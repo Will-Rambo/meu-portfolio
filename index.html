@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfólio de Willian Rambo, desenvolvedor web com foco em soluções modernas e funcionais."
+    />
+    <title>Meu Portfólio</title>
+    <link rel="stylesheet" href="estilo.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="ícone-de-toque-da-maçã"
+      tamanhos="57x57"
+      href="icone/apple-icon-57x57.png"
+    />
+    <link
+      rel="ícone-de-toque-da-maçã"
+      tamanhos="60x60"
+      href="icone/apple-icon-60x60.png"
+    />
+    <link
+      rel="ícone-de-toque-da-maçã"
+      tamanhos="72x72"
+      href="icone-de-toque-da-maçã-72x72.png"
+    />
+    <link
+      rel="ícone-de-toque-da-maçã"
+      tamanhos="76x76"
+      href="icone/android-icon-72x72.png"
+    />
+    <link
+      rel="ícone-de-toque-da-maçã"
+      tamanhos="114x114"
+      href="icone/apple-icon-114x114.png"
+    />
+    <link
+      rel="ícone-de-toque-da-maçã"
+      tamanhos="120x120"
+      href="icone/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      tamanhos="144x144"
+      href="icone/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      tamanhos="152x152"
+      href="icone/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      tamanhos="180x180"
+      href="icone/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      tipo="imagem/png"
+      tamanhos="192x192"
+      href="icone/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      tipo="imagem/png"
+      tamanhos="32x32"
+      href="icone/favicon-32x32.png"
+    />
+    <link
+      rel="ícone"
+      tipo="imagem/png"
+      tamanhos="96x96"
+      href="icone/android-icon-96x96.png"
+    />
+    <link
+      rel="ícone"
+      tipo="imagem/png"
+      tamanhos="16x16"
+      href="icone/favicon-16x16.png"
+    />
+    <link rel="manifesto" href="icone/manifest.json" />
+    <meta nome="msapplication-TileColor" conteúdo="#ffffff" />
+    <meta nome="msapplication-TileImage" conteúdo="ims-icon-144x144.png" />
+    <meta nome="theme-color" conteúdo="#ffffff" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div id="hero">
+          <div><button id="dark-toggle"></button></div>
+          <h1>Willian Rambo</h1>
+        </div>
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="inicio">
+        <h2 id="typing-text" style="color: aliceblue"></h2>
+        <p>Sou programador web com foco em soluções modernas e funcionais</p>
+      </section>
+
+      <section id="sobre" class="reveal">
+        <h2>Sobre mim</h2>
+        <p>
+          Sou apaixonado por tecnologia e estou em constante aprendizado. Tenho
+          conhecimento em HTML, CSS, JavaScript, PHP, MySQL, Git, GitHub, além
+          de frameworks como React. Busco oportunidades para aplicar minhas
+          habilidades em projetos reais.
+        </p>
+      </section>
+
+      <section id="projetos" class="reveal">
+        <h2>Meus projetos</h2>
+        <div class="cards">
+          <div class="card">
+            <h3>Página de Login</h3>
+            <img id="gif-projeto1" src="img/gravacao-login.gif" alt="meu projeto 1 gif"/>
+            <p>
+              Esse projeto foi um desafio do curso Programador Web que realizei
+              no Senac, se trata de uma página onde é possível cadastrar e
+              posteriormente se logar, no final a página retorna boas vindas,
+              esse projeto necessitou de um banco de dados para guardar usuário
+              e senha.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Jogo do Número Secreto</h3>
+            <img id="gif-projeto2" src="img/jogo-numero-secreto.gif" alt="meu projeto 2 gif"/>
+            <p>
+              Esse foi o resultado de uma aula sobre Javascript, uma atividade
+              bem conhecida entre os desenvolvedores, o jogo do número secreto.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="habilidades" class="reveal">
+        <h2>Skills (Habilidades)</h2>
+        <ul class="skills">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>PHP</li>
+          <li>MySQL</li>
+          <li>React</li>
+          <li>Git</li>
+          <li>GitHub</li>
+        </ul>
+      </section>
+
+      <section id="contato" class="reveal">
+        <h2>Contato</h2>
+        <p>
+          Entre em contato pelo e-mail:
+          <a href="mailto:willian.rambo@gmail.com">willian.rambo@gmail.com</a>
+        </p>
+      </section>
+    </main>
+
+    <div id="gif-modal" class="modal-overlay">
+      <img id="modal-gif" src="" alt="gif ampliado" />
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Willian Rambo. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
