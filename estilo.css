@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   background-color: #f5f7fa;
   color: #1a1a1a;
   line-height: 1.6;
@@ -27,11 +27,11 @@ nav {
 }
 
 h1 {
-    font-family: 'Orbitron', sans-serif;
+  font-family: "Orbitron", sans-serif;
 }
 
 h2 {
-    color: #0e0157;
+  color: #0e0157;
 }
 
 nav h1 {
@@ -71,7 +71,7 @@ section {
 }
 
 #inicio h2 {
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .cards {
@@ -87,7 +87,7 @@ section {
   padding: 1rem;
   flex: 1;
   min-width: 250px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
 }
 
@@ -100,8 +100,6 @@ section {
   flex-wrap: wrap;
   gap: 1rem;
 }
-
-
 
 .skills li {
   background-color: #2a98ff;
@@ -122,7 +120,7 @@ section {
 }
 
 #hero {
-  display:flex;
+  display: flex;
   align-items: center;
   gap: 10px;
 }
@@ -187,7 +185,7 @@ section {
 
 @keyframes zoomIn {
   from {
-    transform: scale(0.7);  
+    transform: scale(0.7);
     opacity: 0;
   }
   to {
@@ -238,15 +236,20 @@ nav a:focus {
 }
 
 #typing-text::after {
-  content: '|';
+  content: "|";
   animation: blink 1s infinite;
 }
 
 @keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
 }
-
 
 /* Estilo do botão */
 #dark-toggle {
@@ -262,7 +265,7 @@ nav a:focus {
 
 #dark-toggle:hover {
   background-color: rgb(0, 0, 0);
-  color:#c522f7
+  color: #c522f7;
 }
 
 /* Modo dark */
@@ -275,7 +278,6 @@ body.dark-mode header,
 body.dark-mode footer {
   background-color: #1e1e1e;
 }
-
 
 /* Garantir que o H1 "Willian Rambo" não mude */
 body.dark-mode h1#willian-rambo {
@@ -290,7 +292,7 @@ body.dark-mode .box-especial {
 
 /* Section projetos - fundo escuro */
 body.dark-mode #projetos {
-  background-color: #121212;     /* fundo da section no dark */
+  background-color: #121212; /* fundo da section no dark */
   border-radius: 10px;
   transition: background-color 240ms ease;
 }
@@ -314,7 +316,7 @@ body.dark-mode h2 {
 /* Seleciona o link dentro da section #contato (correta) */
 #contato a {
   text-decoration: none; /* remove sublinhado */
-  color: rgb(47, 44, 252);        /* cor no modo claro */
+  color: rgb(47, 44, 252); /* cor no modo claro */
   cursor: pointer;
 }
 
@@ -323,7 +325,6 @@ body.dark-mode h2 {
 #contato a:focus {
   color: #43bff8;
   text-decoration: none;
-
 }
 
 /* Se usar dark-mode */
@@ -335,3 +336,40 @@ body.dark-mode #contato a:hover,
 body.dark-mode #contato a:focus {
   color: #dc3dfc;
 }
+
+.contato-linha {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* E-mail à esquerda, ícones à direita */
+  flex-wrap: wrap; /* Para quebrar no mobile */
+  gap: 10px;
+}
+
+.social-icons {
+  margin-bottom: 10px;
+}
+
+.social-icons a {
+  display: inline-block;
+  font-size: 2rem;
+  margin: 0 12px;
+  color: white;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Cores de cada rede social no hover */
+.social-icons a.github:hover {
+  color: #c0392b; /* Vermelho */
+  transform: scale(1.2);
+}
+
+.social-icons a.linkedin:hover {
+  color: #0077b5; /* Azul LinkedIn */
+  transform: scale(1.2);
+}
+
+.social-icons a.instagram:hover {
+  color: #e4405f; /* Rosa Instagram */
+  transform: scale(1.2);
+}
+
