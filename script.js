@@ -12,7 +12,8 @@ const firebaseConfig = {
   appId: "1:1075308910656:web:79608b32fd16e411a8e7a5"
 };
 
-// Inicializa Firebase e Firestore
+// Inicializa Firebase e Firestore - para alterar o número de visitas 
+// - www.console.firebase.google.com - firestore database - alterar número em "visitas"
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
@@ -35,8 +36,6 @@ async function atualizarContador() {
     const contadorEl = document.getElementById("contador");
     if (contadorEl) {
       contadorEl.innerText = visitas;
-      contadorEl.style.color = "#cccccc"; // cinza claro
-      contadorEl.style.fontSize = "0.8rem";
     }
   } catch (error) {
     console.error("Erro ao acessar o Firestore:", error);
