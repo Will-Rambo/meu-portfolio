@@ -1,5 +1,46 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+import { getFirestore, doc, getDoc, setDoc, updateDoc } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+// Cole aqui o seu firebaseConfig
+const firebaseConfig = {
+  apiKey: "AIzaSyCe9YoAYWfX32cV-xldDGEqsF4Rz6kQgwE",
+  authDomain: "contador-de-visitas-b0fe1.firebaseapp.com",
+  projectId: "contador-de-visitas-b0fe1",
+  storageBucket: "contador-de-visitas-b0fe1.appspot.com",
+  messagingSenderId: "1075308910656",
+  appId: "1:1075308910656:web:79608b32fd16e411a8e7a5"
+};
+
+// Inicializa Firebase e Firestore
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+// Documento do contador
+const contadorRef = doc(db, "contador", "visitas");
+
+// Função para atualizar e exibir o contador
+async function atualizarContador() {
+  try {
+    const docSnap = await getDoc(contadorRef);
+    if (docSnap.exists()) {
+      let visitas = docSnap.data().numero;
+      visitas += 1;
+      await updateDoc(contadorRef, { numero: visitas });
+      document.getElementById("contador").innerText = visitas;
+    } else {
+      await setDoc(contadorRef, { numero: 1 });
+      document.getElementById("contador").innerText = 1;
+    }
+  } catch (error) {
+    console.error("Erro ao acessar o Firestore:", error);
+  }
+}
+
+// Chama o contador assim que a página carrega
+window.onload = atualizarContador;
+
+// ====================== MÁQUINA DE ESCREVER ======================
 document.addEventListener("DOMContentLoaded", () => {
-  // Efeito máquina de escrever
   const text = "Bem vindo(a) ao meu Portfólio";
   let i = 0;
   const speed = 80;
@@ -21,10 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     link.addEventListener("click", function (e) {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute("href"));
-      target.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   });
 
@@ -36,54 +74,55 @@ document.addEventListener("DOMContentLoaded", () => {
     delay: 100,
     easing: "ease-in-out",
     reset: true,
-    cleanup: true,
+    cleanup: true
   });
 });
 
+// ====================== MENU TOGGLE ======================
 document.addEventListener("DOMContentLoaded", () => {
   const toggleBtn = document.querySelector(".menu-toggle");
   const menuList = document.querySelector(".menu ul");
-
-  toggleBtn.addEventListener("click", () => {
-    menuList.classList.toggle("active");
-  });
+  if (toggleBtn) {
+    toggleBtn.addEventListener("click", () => {
+      menuList.classList.toggle("active");
+    });
+  }
 });
 
+// ====================== MODAL DE GIFS ======================
 const gif1 = document.getElementById("gif-projeto1");
 const gif2 = document.getElementById("gif-projeto2");
 const modal = document.getElementById("gif-modal");
 const modalGif = document.getElementById("modal-gif");
 
-// Abrir o modal ao clicar no GIF
-gif1.addEventListener("click", () => {
-  modalGif.src = gif1.src;
-  modal.style.display = "flex";
-});
+if (gif1) {
+  gif1.addEventListener("click", () => {
+    modalGif.src = gif1.src;
+    modal.style.display = "flex";
+  });
+}
+if (gif2) {
+  gif2.addEventListener("click", () => {
+    modalGif.src = gif2.src;
+    modal.style.display = "flex";
+  });
+}
 
-gif2.addEventListener("click", () => {
-  modalGif.src = gif2.src;
-  modal.style.display = "flex";
-});
+if (modal) {
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) modal.style.display = "none";
+  });
+}
 
-// Fechar modal ao clicar fora do GIF
-modal.addEventListener("click", (e) => {
-  if (e.target === modal) {
-    modal.style.display = "none";
-  }
-});
-
-// Fechar modal com ESC
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    modal.style.display = "none";
-  }
+  if (e.key === "Escape") modal.style.display = "none";
 });
 
+// ====================== DARK MODE ======================
 document.addEventListener("DOMContentLoaded", () => {
   const darkToggleBtn = document.getElementById("dark-toggle");
-  if (!darkToggleBtn) return; // evita erro se o botão não existir
+  if (!darkToggleBtn) return;
 
-  // Aplica tema salvo (se houver)
   if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark-mode");
     darkToggleBtn.textContent = "Modo claro";
@@ -91,17 +130,9 @@ document.addEventListener("DOMContentLoaded", () => {
     darkToggleBtn.textContent = "Modo escuro";
   }
 
-  // Listener único que faz tudo: toggle, atualiza texto e salva preferência
   darkToggleBtn.addEventListener("click", () => {
     const isDark = document.body.classList.toggle("dark-mode");
     darkToggleBtn.textContent = isDark ? "Modo claro" : "Modo escuro";
     localStorage.setItem("theme", isDark ? "dark" : "light");
   });
 });
-
-//api para contador de visitas
-fetch("https://api.countapi.xyz/hit/willianrambo/portfolio")
-  .then((response) => response.json())
-  .then((data) => {
-    document.getElementById("contador").innerText = data.value;
-  });
