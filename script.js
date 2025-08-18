@@ -1,3 +1,4 @@
+// ====================== FIREBASE CONFIGURAÇÃO ======================
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 import { getFirestore, doc, getDoc, setDoc, updateDoc } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
@@ -22,14 +23,20 @@ const contadorRef = doc(db, "contador", "visitas");
 async function atualizarContador() {
   try {
     const docSnap = await getDoc(contadorRef);
+    let visitas;
     if (docSnap.exists()) {
-      let visitas = docSnap.data().numero;
-      visitas += 1;
+      visitas = docSnap.data().numero + 1;
       await updateDoc(contadorRef, { numero: visitas });
-      document.getElementById("contador").innerText = visitas;
     } else {
-      await setDoc(contadorRef, { numero: 1 });
-      document.getElementById("contador").innerText = 1;
+      visitas = 1;
+      await setDoc(contadorRef, { numero: visitas });
+    }
+    // Atualiza o rodapé de forma discreta
+    const contadorEl = document.getElementById("contador");
+    if (contadorEl) {
+      contadorEl.innerText = visitas;
+      contadorEl.style.color = "#cccccc"; // cinza claro
+      contadorEl.style.fontSize = "0.8rem";
     }
   } catch (error) {
     console.error("Erro ao acessar o Firestore:", error);
