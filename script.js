@@ -1,5 +1,4 @@
-
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   // Efeito máquina de escrever
   const text = "Bem vindo(a) ao meu Portfólio";
   let i = 0;
@@ -14,42 +13,41 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-    typingEl.textContent = "";
+  typingEl.textContent = "";
   typeWriter();
 
   // Scroll suave para âncoras
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', function (e) {
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", function (e) {
       e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
+      const target = document.querySelector(this.getAttribute("href"));
       target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+        behavior: "smooth",
+        block: "start",
       });
     });
   });
 
   // ScrollReveal
-  ScrollReveal().reveal('.reveal', {
-    origin: 'bottom',
-    distance: '40px',
+  ScrollReveal().reveal(".reveal", {
+    origin: "bottom",
+    distance: "40px",
     duration: 800,
     delay: 100,
-    easing: 'ease-in-out',
+    easing: "ease-in-out",
     reset: true,
-    cleanup: true
+    cleanup: true,
   });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  const toggleBtn = document.querySelector('.menu-toggle');
-  const menuList = document.querySelector('.menu ul');
+document.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.querySelector(".menu-toggle");
+  const menuList = document.querySelector(".menu ul");
 
-  toggleBtn.addEventListener('click', () => {
-    menuList.classList.toggle('active');
+  toggleBtn.addEventListener("click", () => {
+    menuList.classList.toggle("active");
   });
 });
-
 
 const gif1 = document.getElementById("gif-projeto1");
 const gif2 = document.getElementById("gif-projeto2");
@@ -81,22 +79,29 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  const darkToggleBtn = document.getElementById('dark-toggle');
+document.addEventListener("DOMContentLoaded", () => {
+  const darkToggleBtn = document.getElementById("dark-toggle");
   if (!darkToggleBtn) return; // evita erro se o botão não existir
 
   // Aplica tema salvo (se houver)
-  if (localStorage.getItem('theme') === 'dark') {
-    document.body.classList.add('dark-mode');
-    darkToggleBtn.textContent = 'Modo claro';
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+    darkToggleBtn.textContent = "Modo claro";
   } else {
-    darkToggleBtn.textContent = 'Modo escuro';
+    darkToggleBtn.textContent = "Modo escuro";
   }
 
   // Listener único que faz tudo: toggle, atualiza texto e salva preferência
-  darkToggleBtn.addEventListener('click', () => {
-    const isDark = document.body.classList.toggle('dark-mode');
-    darkToggleBtn.textContent = isDark ? 'Modo claro' : 'Modo escuro';
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  darkToggleBtn.addEventListener("click", () => {
+    const isDark = document.body.classList.toggle("dark-mode");
+    darkToggleBtn.textContent = isDark ? "Modo claro" : "Modo escuro";
+    localStorage.setItem("theme", isDark ? "dark" : "light");
   });
 });
+
+//api para contador de visitas
+fetch("https://api.countapi.xyz/hit/willianrambo/portfolio")
+  .then((response) => response.json())
+  .then((data) => {
+    document.getElementById("contador").innerText = data.value;
+  });
