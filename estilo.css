@@ -393,3 +393,19 @@ footer #contador {
   right: 7rem;
   color: #dc3dfc;
 }
+
+#sobre .sobre-container {
+  display: flex;
+  align-items: center; /* alinha verticalmente */
+  justify-content: space-between; /* espaço entre texto e imagem */
+  gap: 20px; /* espaço entre os elementos */
+}
+
+#sobre .texto-sobre {
+  flex: 1; /* texto ocupa mais espaço */
+}
+
+#sobre .imagem-sobre img {
+  max-width: 300px; /* controla o tamanho da imagem */
+  height: auto;
+}
