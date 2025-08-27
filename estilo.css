@@ -24,6 +24,11 @@ header {
   box-sizing: border-box; /* conta padding dentro da largura */
 }
 
+p {
+  font-size: 20px; /* ou 1.125rem, equivalente a 18px */
+  line-height: 1.8; /* deixa o texto mais legível */
+}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -472,4 +477,20 @@ footer #contador {
 .nav-links.active {
   display: flex;
 }
+/* Título normal (desktop) */
+#sobre h2 {
+  display: block;
 }
+}
+
+/* Esconde o título em telas menores (responsivo) */
+@media (max-width: 768px) {
+  #sobre h2 {
+    display: none;
+  }
+}
+
+section {
+  scroll-margin-top: 95px; /* altura do header */
+}
+
