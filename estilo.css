@@ -18,6 +18,10 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
+  width: 100%;      /* ocupa toda a largura */
+  left: 0;          /* gruda na esquerda */
+  right: 0;         /* gruda na direita */
+  box-sizing: border-box; /* conta padding dentro da largura */
 }
 
 nav {
@@ -403,9 +407,69 @@ footer #contador {
 
 #sobre .texto-sobre {
   flex: 1; /* texto ocupa mais espaço */
+  text-align: justify; /* texto justificado */
 }
 
 #sobre .imagem-sobre img {
   max-width: 300px; /* controla o tamanho da imagem */
   height: auto;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 768px) {
+  #sobre .sobre-container {
+    flex-direction: column-reverse; /* empilha os itens no mobile */
+    text-align: center;     /* centraliza texto e imagem */
+  }
+
+  #sobre .texto-sobre {
+    margin-bottom: 15px;
+  }
+
+  #sobre .imagem-sobre img {
+    max-width: 200px; /* imagem menor em telas pequenas */
+  }
+}
+
+/* botão sanduíche */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* comportamento mobile */
+@media (max-width: 768px) {
+  nav ul {
+    display: none; /* esconde menu por padrão */
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    width: 100%;
+    background: #2c3e50;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  nav ul.show {
+    display: flex; /* mostra quando ativo */
+  }
+
+  .menu-toggle {
+    display: block; /* aparece no mobile */
+  }
+
+  nav {
+    flex-direction: row; /* mantém o header organizado */
+    align-items: center;
+  }
+.nav-links {
+  display: none;
+}
+.nav-links.active {
+  display: flex;
+}
 }
