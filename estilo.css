@@ -104,6 +104,24 @@ section {
   transform: scale(1.02);
 }
 
+.btn-projeto {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: #00cf23;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.btn-projeto:hover {
+  background-color: #00ff37;
+}
+
+.ampliar-gif {
+  font-size: 15px;
+  font-family: "Segoe UI", sans-serif;;
+}
+
 .skills {
   display: flex;
   flex-wrap: wrap;
@@ -379,15 +397,12 @@ footer {
   background-color: #2c3e50;
   color: #ecf0f1;
   text-align: center;
-  padding: 1rem;
-}
-
-footer {
   display: flex;
   justify-content: center; /* centraliza o conteúdo horizontalmente */
   align-items: center; /* alinha verticalmente */
   position: relative; /* permite posicionamento absoluto do contador */
-  padding: 1rem 0;
+  padding: 1rem;
+  font-size: 0.8rem;
 }
 
 footer #contador {
